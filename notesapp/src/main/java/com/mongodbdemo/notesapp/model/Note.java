@@ -1,22 +1,22 @@
 package com.mongodbdemo.notesapp.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigInteger;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @AllArgsConstructor
 @Getter
+@ToString
 @Builder(toBuilder = true)
+@EqualsAndHashCode
 @Document("note-data")
 public class Note {
 
     @Id
-    private UUID id;
+    private BigInteger id;
 
     private String title;
     private String noteString;
